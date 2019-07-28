@@ -10,3 +10,6 @@ class Card:
 
     def __eq__(self, o) -> bool:
         return isinstance(o, Card) and o.suit == self.suit and o.value == self.value
+
+    def __str__(self) -> str:
+        return '{suite} {value}'.format(suite = self.suit.name, value = self.value.name)
