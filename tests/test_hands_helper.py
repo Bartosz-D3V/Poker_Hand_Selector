@@ -116,34 +116,34 @@ class TestHandsHelper(unittest.TestCase):
             HandsHelper.is_three_of_kind(card1, card2, card3, card4, card5)
         )
 
-    def test_two_pair_should_return_true_for_three_cards_with_same_value(self):
+    def test_is_two_pair_should_return_true_for_three_cards_with_same_value(self):
         card1 = Card(DeckSuite.CLOVERS, DeckValue.JACK)
         card2 = Card(DeckSuite.PIKES, DeckValue.JACK)
         card3 = Card(DeckSuite.HEARTS, DeckValue.ACE)
         card4 = Card(DeckSuite.TILES, DeckValue.ACE)
         card5 = Card(DeckSuite.PIKES, DeckValue.TWO)
-        self.assertTrue(HandsHelper.two_pair(card1, card2, card3, card4, card5))
+        self.assertTrue(HandsHelper.is_two_pair(card1, card2, card3, card4, card5))
 
-    def test_two_pair_should_return_false(self):
+    def test_is_two_pair_should_return_false(self):
         card1 = Card(DeckSuite.CLOVERS, DeckValue.JACK)
         card2 = Card(DeckSuite.PIKES, DeckValue.JACK)
         card3 = Card(DeckSuite.HEARTS, DeckValue.ACE)
         card4 = Card(DeckSuite.TILES, DeckValue.THREE)
         card5 = Card(DeckSuite.PIKES, DeckValue.TWO)
-        self.assertFalse(HandsHelper.two_pair(card1, card2, card3, card4, card5))
+        self.assertFalse(HandsHelper.is_two_pair(card1, card2, card3, card4, card5))
 
-    def test_one_pair_should_return_true(self):
+    def test_is_one_pair_should_return_true(self):
         card1 = Card(DeckSuite.CLOVERS, DeckValue.JACK)
         card2 = Card(DeckSuite.PIKES, DeckValue.JACK)
         card3 = Card(DeckSuite.HEARTS, DeckValue.QUEEN)
         card4 = Card(DeckSuite.TILES, DeckValue.THREE)
         card5 = Card(DeckSuite.PIKES, DeckValue.ACE)
-        self.assertTrue(HandsHelper.one_pair(card1, card2, card3, card4, card5))
+        self.assertTrue(HandsHelper.is_one_pair(card1, card2, card3, card4, card5))
 
-    def test_one_pair_should_return_false(self):
+    def test_is_one_pair_should_return_false(self):
         card1 = Card(DeckSuite.CLOVERS, DeckValue.SEVEN)
         card2 = Card(DeckSuite.PIKES, DeckValue.JACK)
         card3 = Card(DeckSuite.HEARTS, DeckValue.QUEEN)
         card4 = Card(DeckSuite.TILES, DeckValue.THREE)
         card5 = Card(DeckSuite.PIKES, DeckValue.ACE)
-        self.assertFalse(HandsHelper.one_pair(card1, card2, card3, card4, card5))
+        self.assertFalse(HandsHelper.is_one_pair(card1, card2, card3, card4, card5))

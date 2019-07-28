@@ -31,11 +31,11 @@ class HandsHelper:
         return 3 in Counter([card.value.get_value() for card in cards]).values()
 
     @staticmethod
-    def two_pair(*cards: Card) -> bool:
+    def is_two_pair(*cards: Card) -> bool:
         unique_vals_count = Counter([card.value.get_value() for card in cards]).values()
         return sum([i == 2 for i in unique_vals_count]) == 2
 
     @staticmethod
-    def one_pair(*cards: Card) -> bool:
+    def is_one_pair(*cards: Card) -> bool:
         unique_vals_count = Counter([card.value.get_value() for card in cards]).values()
         return sum([i == 2 for i in unique_vals_count]) == 1
