@@ -19,4 +19,5 @@ class TestConvertToHands(unittest.TestCase):
         card6 = Card(DeckSuite.CLOVERS, DeckValue.KING)
         hand2 = Hand(card4, card5, card6)
 
-        self.assertListEqual([hand1, hand2], convert_to_hands("H8 T10 PA, PJ HQ CK"))
+        actual = convert_to_hands("H8 T10 PA, PJ HQ CK")
+        self.assertListEqual([hand1, hand2], actual)

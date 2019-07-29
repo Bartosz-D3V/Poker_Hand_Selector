@@ -19,23 +19,28 @@ class HandsHelper:
 
     @staticmethod
     def is_four_of_kind(*cards: Card) -> bool:
-        return 4 in Counter([card.value.get_value() for card in cards]).values()
+        return 4 in Counter([card.value.get_value()
+                             for card in cards]).values()
 
     @staticmethod
     def is_full_house(*cards: Card) -> bool:
-        unique_vals_count = Counter([card.value.get_value() for card in cards]).values()
+        unique_vals_count = Counter([card.value.get_value()
+                                     for card in cards]).values()
         return 3 in unique_vals_count and 2 in unique_vals_count
 
     @staticmethod
     def is_three_of_kind(*cards: Card) -> bool:
-        return 3 in Counter([card.value.get_value() for card in cards]).values()
+        return 3 in Counter([card.value.get_value()
+                             for card in cards]).values()
 
     @staticmethod
     def is_two_pair(*cards: Card) -> bool:
-        unique_vals_count = Counter([card.value.get_value() for card in cards]).values()
+        unique_vals_count = Counter([card.value.get_value()
+                                     for card in cards]).values()
         return sum([i == 2 for i in unique_vals_count]) == 2
 
     @staticmethod
     def is_one_pair(*cards: Card) -> bool:
-        unique_vals_count = Counter([card.value.get_value() for card in cards]).values()
+        unique_vals_count = Counter([card.value.get_value()
+                                     for card in cards]).values()
         return sum([i == 2 for i in unique_vals_count]) == 1
