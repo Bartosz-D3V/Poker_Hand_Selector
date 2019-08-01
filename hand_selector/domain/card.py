@@ -9,7 +9,9 @@ class Card:
         self.value = value
 
     def __eq__(self, o) -> bool:
-        return isinstance(o, Card) and o.suit == self.suit and o.value == self.value
+        same_values = o.suit == self.suit and o.value == self.value
+        return isinstance(o, Card) and same_values
 
     def __str__(self) -> str:
-        return '{suite} {value}'.format(suite = self.suit.name, value = self.value.name)
+        return '{suite} {value}'.format(suite=self.suit.name,
+                                        value=self.value.name)
